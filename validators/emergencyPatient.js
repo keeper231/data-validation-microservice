@@ -15,7 +15,7 @@ const emergencyPatientValidationSchema = Joi.object({
         'string.max': 'Emergency first name cannot exceed 255 characters.',
         'any.required': 'Emergency first name is required.'
     }),
-    emergency_middle_name: Joi.string().max(255).required().messages({
+    emergency_middle_name: Joi.string().max(255).allow(null, '').messages({
         'string.base': 'Emergency middle name must be a string.',
         'string.max': 'Emergency middle name cannot exceed 255 characters.',
         'any.required': 'Emergency middle name is required.'
