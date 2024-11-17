@@ -30,6 +30,13 @@ const vitalSignsValidationSchema = Joi.object({
         'number.max': 'Respiratory rate cannot exceed 60 breaths per minute.',
         'any.required': 'Respiratory rate is required.'
     }),
+    oxygen_saturation: Joi.number().integer().min(0).max(100).required().messages({
+        'number.base': 'Oxygen saturation must be a number.',
+        'number.integer': 'Oxygen saturation must be an integer.',
+        'number.min': 'Oxygen saturation cannot be less than 0%.',
+        'number.max': 'Oxygen saturation cannot exceed 100%.',
+        'any.required': 'Oxygen saturation is required.'
+    }),
     priority_level: Joi.string().max(255).required().messages({
         'string.base': 'Priority level must be a string.',
         'string.max': 'Priority level cannot exceed 255 characters.',
