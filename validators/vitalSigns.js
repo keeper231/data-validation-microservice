@@ -1,6 +1,11 @@
 const Joi = require('joi');
 
 const vitalSignsValidationSchema = Joi.object({
+    diagnosis_time: Joi.string().pattern(new RegExp(/^\d{2}:\d{2}$/)).required().messages({
+        'string.base': 'Emergency time must be a string.',
+        'string.pattern.base': 'Emergency time must be in the format hh:mm.',
+        'any.required': 'Emergency time is required.'
+    }),
     B_P: Joi.string().pattern(new RegExp(/^\d{1,3}\/\d{1,3}$/)).required().messages({
         'string.base': 'Blood pressure must be a string.',
         'string.pattern.base': 'Blood pressure must be in the format of "120/80".',
