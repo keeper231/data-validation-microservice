@@ -30,6 +30,11 @@ const vitalSignsValidationSchema = Joi.object({
         'number.max': 'Respiratory rate cannot exceed 60 breaths per minute.',
         'any.required': 'Respiratory rate is required.'
     }),
+    priority_level: Joi.string().max(255).required().messages({
+        'string.base': 'Priority level must be a string.',
+        'string.max': 'Priority level cannot exceed 255 characters.',
+        'any.required': 'Priority level is required.'
+    }),
     vitals_note: Joi.string().max(1000).required().messages({
         'string.base': 'Vitals note must be a string.',
         'string.max': 'Vitals note cannot exceed 1000 characters.',
