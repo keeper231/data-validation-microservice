@@ -23,12 +23,12 @@ const vitalSignsValidationSchema = Joi.object({
         'number.max': 'Heart rate cannot exceed 200 beats per minute.',
         'any.required': 'Heart rate is required.'
     }),
-    pulse_rate: Joi.number().integer().min(30).max(200).required().messages({
-        'number.base': 'Pulse rate must be a number.',
-        'number.min': 'Pulse rate cannot be less than 30 beats per minute.',
-        'number.max': 'Pulse rate cannot exceed 200 beats per minute.',
-        'any.required': 'Pulse rate is required.'
-    }),
+    // pulse_rate: Joi.number().integer().min(30).max(200).required().messages({
+    //     'number.base': 'Pulse rate must be a number.',
+    //     'number.min': 'Pulse rate cannot be less than 30 beats per minute.',
+    //     'number.max': 'Pulse rate cannot exceed 200 beats per minute.',
+    //     'any.required': 'Pulse rate is required.'
+    // }),
     respiratory_rate: Joi.number().integer().min(10).max(60).required().messages({
         'number.base': 'Respiratory rate must be a number.',
         'number.min': 'Respiratory rate cannot be less than 10 breaths per minute.',
