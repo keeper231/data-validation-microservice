@@ -38,10 +38,9 @@ const emergencyPatientValidationSchema = Joi.object({
         'number.min': 'Emergency age cannot be less than 0.',
         'number.max': 'Emergency age cannot exceed 120.'
     }),
-    priority_level: Joi.string().max(255).required().messages({
-        'string.base': 'Priority level must be a string.',
-        'string.max': 'Priority level cannot exceed 255 characters.',
-        'any.required': 'Priority level is required.'
+    emergency_reason: Joi.string().max(1000).allow(null, '').messages({
+        'string.base': 'Emergency reason must be a string.',
+        'string.max': 'Emergency reason cannot exceed 1000 characters.'
     }),
     status: Joi.string().max(255).allow(null, '').messages({
         'string.base': 'Status must be a string.',
